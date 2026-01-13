@@ -1,16 +1,56 @@
-# React + Vite
+# 🌟 Social Media Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, fully-featured social media dashboard built with React and Material-UI. Features posts, stories, reactions, comments, analytics, and real-time interactions.
 
-Currently, two official plugins are available:
+![Social Media Dashboard Preview](https://via.placeholder.com/800x400.png?text=Social+Media+Dashboard+Screenshot)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## React Compiler
+### 🎯 **Core Features**
+- **📱 Post Creation** - Create posts with text, images, videos, and tags
+- **📖 Stories** - View and create stories with progress indicators
+- **❤️ Reactions** - Multiple reaction types (like, love, haha, wow, sad, fire)
+- **💬 Comments** - Nested comment system with replies
+- **🔖 Bookmarks** - Save posts for later viewing
+- **👥 Friends** - Friend system with online status indicators
+- **🔔 Notifications** - Real-time notifications for interactions
+- **📊 Analytics** - Detailed analytics dashboard with charts
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🎨 **UI/UX Features**
+- **🌓 Dark/Light Mode** - Toggle between themes
+- **📱 Responsive Design** - Mobile-first responsive layout
+- **✨ Smooth Animations** - Framer Motion animations throughout
+- **🎯 Interactive Components** - Hover effects, loading states, transitions
+- **🌈 Modern Design** - Glass morphism, gradients, shadows
 
-## Expanding the ESLint configuration
+### 📈 **Analytics Features**
+- **📊 Engagement Charts** - Line, bar, and area charts
+- **👥 Audience Demographics** - Age and gender distribution
+- **📈 Performance Metrics** - Likes, comments, shares, reach
+- **📱 Platform Distribution** - Social media platform analytics
+- **🏆 Top Posts** - Best performing posts ranking
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Technologies Used
+
+- **React 18** - Frontend library
+- **Vite** - Build tool & dev server
+- **Material-UI** - Component library
+- **Framer Motion** - Animations
+- **Recharts** - Charting library
+- **React Router** - Navigation
+- **React Hot Toast** - Notifications
+- **date-fns** - Date utilities
+- **UUID** - Unique ID generation
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or yarn
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/social-media-dashboard.git
+   cd social-media-dashboard
