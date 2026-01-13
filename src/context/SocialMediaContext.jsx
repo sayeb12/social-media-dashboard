@@ -12,51 +12,63 @@ export const useSocialMedia = () => {
   return context;
 };
 
-// Mock data
+// Mock data with your friends
 const mockUsers = [
   {
     id: '1',
-    name: 'John Doe',
-    username: 'johndoe',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop',
-    bio: 'Digital creator & traveler ✈️',
+    name: 'Md Sayeb',
+    username: 'sayeb',
+    avatar: '/assets/images/sayeb1.jpeg',
+    bio: 'React Developer & Tech Enthusiast 💻',
     isOnline: true,
     isFriend: true,
-    mutualFriends: 12,
+    mutualFriends: 8,
     followers: 1250,
     following: 850,
   },
   {
     id: '2',
-    name: 'Sarah Wilson',
-    username: 'sarahw',
-    avatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop',
-    bio: 'Photographer & nature lover 🌿',
+    name: 'Rafael Rafin',
+    username: 'rafin',
+    avatar: '/assets/images/rafi1.jpeg',
+    bio: 'Photographer & Travel Blogger 📷✈️',
     isOnline: true,
     isFriend: true,
-    mutualFriends: 8,
+    mutualFriends: 12,
     followers: 890,
     following: 420,
   },
   {
     id: '3',
-    name: 'Mike Johnson',
-    username: 'mikej',
-    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop',
-    bio: 'Tech enthusiast & developer 💻',
+    name: 'Samiya Rahman',
+    username: 'samiya',
+    avatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop',
+    bio: 'UI/UX Designer & Artist 🎨',
     isOnline: false,
     isFriend: false,
     mutualFriends: 5,
     followers: 2100,
     following: 1500,
   },
+  {
+    id: '4',
+    name: 'Ubaida Ahmed',
+    username: 'ubaida',
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop',
+    bio: 'Full Stack Developer & Mentor 🚀',
+    isOnline: false,
+    isFriend: true,
+    mutualFriends: 15,
+    followers: 1800,
+    following: 1200,
+  },
 ];
 
 const mockPosts = [
   {
     id: '1',
-    author: mockUsers[0],
-    content: 'Just launched my new website! Check it out and let me know what you think. #webdesign #portfolio',
+    author: mockUsers[0], // Md Sayeb
+    content: 'Just finished building my new React project! Learned so much about hooks and context API. #react #webdev #coding',
     timestamp: new Date(Date.now() - 3600000).toISOString(),
     likes: 245,
     loves: 89,
@@ -67,15 +79,15 @@ const mockPosts = [
     comments: [
       {
         id: 'c1',
-        author: mockUsers[1],
-        content: 'Looks amazing! Great work 👏',
+        author: mockUsers[1], // Rafael Rafin
+        content: 'Great work Sayeb! The UI looks amazing 👏',
         timestamp: new Date(Date.now() - 1800000).toISOString(),
         likes: 12,
       },
       {
         id: 'c2',
-        author: mockUsers[2],
-        content: 'The design is really clean and modern. Well done!',
+        author: mockUsers[3], // Ubaida Ahmed
+        content: 'Clean code and great design! Let me know if you need help with deployment.',
         timestamp: new Date(Date.now() - 1200000).toISOString(),
         likes: 8,
       },
@@ -84,17 +96,17 @@ const mockPosts = [
     isLiked: true,
     isBookmarked: false,
     privacy: 'public',
-    tags: ['webdesign', 'portfolio', 'launch'],
+    tags: ['react', 'webdev', 'coding', 'javascript'],
     media: {
       type: 'image',
-      url: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop',
-      caption: 'Website preview',
+      url: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=400&fit=crop',
+      caption: 'My React Dashboard Project',
     },
   },
   {
     id: '2',
-    author: mockUsers[1],
-    content: 'Morning hike with the best views! Nature always inspires me. #hiking #nature #photography',
+    author: mockUsers[1], // Rafael Rafin
+    content: 'Captured this beautiful sunset at Cox\'s Bazar yesterday. Nature is the best therapy! #photography #bangladesh #sunset',
     timestamp: new Date(Date.now() - 7200000).toISOString(),
     likes: 189,
     loves: 120,
@@ -105,21 +117,97 @@ const mockPosts = [
     comments: [
       {
         id: 'c3',
-        author: mockUsers[0],
-        content: 'Beautiful shot! Where is this?',
+        author: mockUsers[0], // Md Sayeb
+        content: 'Amazing shot Rafin! The colors are perfect 😍',
         timestamp: new Date(Date.now() - 6000000).toISOString(),
         likes: 3,
+      },
+      {
+        id: 'c4',
+        author: mockUsers[2], // Samiya Rahman
+        content: 'This is breathtaking! Where exactly in Cox\'s Bazar?',
+        timestamp: new Date(Date.now() - 5500000).toISOString(),
+        likes: 5,
       },
     ],
     shares: 23,
     isLiked: false,
     isBookmarked: true,
     privacy: 'friends',
-    tags: ['hiking', 'nature', 'photography'],
+    tags: ['photography', 'bangladesh', 'sunset', 'nature'],
     media: {
       type: 'image',
       url: 'https://images.unsplash.com/photo-1501555088652-021faa106b9b?w=800&h=400&fit=crop',
-      caption: 'Mountain view',
+      caption: 'Sunset at Cox\'s Bazar',
+    },
+  },
+  {
+    id: '3',
+    author: mockUsers[2], // Samiya Rahman
+    content: 'Just completed my new UI design for a fintech app. Feedback welcome! #design #uiux #figma',
+    timestamp: new Date(Date.now() - 14400000).toISOString(),
+    likes: 156,
+    loves: 45,
+    hahas: 3,
+    wows: 32,
+    sads: 1,
+    fires: 28,
+    comments: [
+      {
+        id: 'c5',
+        author: mockUsers[0], // Md Sayeb
+        content: 'The color scheme is perfect! Can you share your design system?',
+        timestamp: new Date(Date.now() - 13000000).toISOString(),
+        likes: 7,
+      },
+    ],
+    shares: 18,
+    isLiked: true,
+    isBookmarked: false,
+    privacy: 'public',
+    tags: ['design', 'uiux', 'figma', 'fintech'],
+    media: {
+      type: 'image',
+      url: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&h=400&fit=crop',
+      caption: 'Fintech App UI Design',
+    },
+  },
+  {
+    id: '4',
+    author: mockUsers[3], // Ubaida Ahmed
+    content: 'Gave a workshop on React Performance Optimization today at the developer meetup. Great engagement from everyone! #react #workshop #performance',
+    timestamp: new Date(Date.now() - 21600000).toISOString(),
+    likes: 278,
+    loves: 95,
+    hahas: 8,
+    wows: 67,
+    sads: 2,
+    fires: 89,
+    comments: [
+      {
+        id: 'c6',
+        author: mockUsers[0], // Md Sayeb
+        content: 'Wish I could attend! Any slides or resources to share?',
+        timestamp: new Date(Date.now() - 20000000).toISOString(),
+        likes: 15,
+      },
+      {
+        id: 'c7',
+        author: mockUsers[1], // Rafael Rafin
+        content: 'The workshop was amazing Ubaida! Learned a lot about memoization.',
+        timestamp: new Date(Date.now() - 19000000).toISOString(),
+        likes: 9,
+      },
+    ],
+    shares: 42,
+    isLiked: true,
+    isBookmarked: true,
+    privacy: 'public',
+    tags: ['react', 'workshop', 'performance', 'javascript'],
+    media: {
+      type: 'image',
+      url: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop',
+      caption: 'React Workshop Session',
     },
   },
 ];
@@ -129,7 +217,7 @@ const mockStories = [
     id: '1',
     userId: '1',
     user: mockUsers[0],
-    media: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop',
+    media: '/assets/images/sayeb1.jpeg',
     timestamp: new Date(Date.now() - 60000).toISOString(),
     views: 125,
   },
@@ -137,9 +225,25 @@ const mockStories = [
     id: '2',
     userId: '2',
     user: mockUsers[1],
-    media: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=600&fit=crop',
+    media: '/assets/images/rafi1.jpeg',
     timestamp: new Date(Date.now() - 120000).toISOString(),
     views: 89,
+  },
+  {
+    id: '3',
+    userId: '3',
+    user: mockUsers[2],
+    media: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=600&fit=crop',
+    timestamp: new Date(Date.now() - 300000).toISOString(),
+    views: 67,
+  },
+  {
+    id: '4',
+    userId: '4',
+    user: mockUsers[3],
+    media: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop',
+    timestamp: new Date(Date.now() - 450000).toISOString(),
+    views: 92,
   },
 ];
 
@@ -147,25 +251,33 @@ const mockNotifications = [
   {
     id: '1',
     type: 'like',
-    message: 'John Doe liked your post',
-    avatar: mockUsers[0].avatar,
+    message: 'Rafael Rafin liked your post',
+    avatar: mockUsers[1].avatar,
     time: '2 min ago',
     read: false,
   },
   {
     id: '2',
     type: 'comment',
-    message: 'Sarah Wilson commented on your photo',
-    avatar: mockUsers[1].avatar,
+    message: 'Samiya Rahman commented on your photo',
+    avatar: mockUsers[2].avatar,
     time: '15 min ago',
     read: false,
   },
   {
     id: '3',
     type: 'friend_request',
-    message: 'Mike Johnson sent you a friend request',
-    avatar: mockUsers[2].avatar,
+    message: 'Ubaida Ahmed sent you a friend request',
+    avatar: mockUsers[3].avatar,
     time: '1 hour ago',
+    read: true,
+  },
+  {
+    id: '4',
+    type: 'like',
+    message: 'Ubaida Ahmed liked your React project',
+    avatar: mockUsers[3].avatar,
+    time: '3 hours ago',
     read: true,
   },
 ];
@@ -173,34 +285,54 @@ const mockNotifications = [
 const mockEvents = [
   {
     id: '1',
-    title: 'Tech Meetup 2024',
+    title: 'React Developer Meetup',
     date: 'Tomorrow, 6:00 PM',
-    location: 'San Francisco',
-    attendees: 245,
+    location: 'Dhaka Tech Hub',
+    attendees: 45,
     isGoing: true,
   },
   {
     id: '2',
-    title: 'Design Workshop',
+    title: 'Photography Workshop',
     date: 'Friday, 2:00 PM',
+    location: 'Chittagong Art Center',
+    attendees: 28,
+    isGoing: false,
+  },
+  {
+    id: '3',
+    title: 'UI/UX Design Conference',
+    date: 'Saturday, 10:00 AM',
     location: 'Online',
     attendees: 120,
-    isGoing: false,
+    isGoing: true,
   },
 ];
 
 const mockGroups = [
   {
     id: '1',
-    name: 'React Developers',
+    name: 'Bangladesh React Developers',
     members: 1250,
     isJoined: true,
   },
   {
     id: '2',
-    name: 'Photography Club',
+    name: 'Bangladesh Photography Club',
     members: 890,
     isJoined: false,
+  },
+  {
+    id: '3',
+    name: 'Dhaka Design Community',
+    members: 650,
+    isJoined: true,
+  },
+  {
+    id: '4',
+    name: 'Bangladesh Tech Entrepreneurs',
+    members: 2100,
+    isJoined: true,
   },
 ];
 
@@ -216,7 +348,7 @@ export const SocialMediaProvider = ({ children }) => {
   };
 
   const [currentUser, setCurrentUser] = useState(() => 
-    loadFromStorage('social_user', mockUsers[0])
+    loadFromStorage('social_user', mockUsers[0]) // Md Sayeb as current user
   );
   const [posts, setPosts] = useState(() => 
     loadFromStorage('social_posts', mockPosts)

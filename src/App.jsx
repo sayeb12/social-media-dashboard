@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { Container, Box, Grid, Fab, Drawer } from '@mui/material';
+import { Container, Box, Grid, Fab, Button, Typography } from '@mui/material';
 import {
   Add as AddIcon,
   Chat as ChatIcon,
   Notifications as NotificationsIcon,
+  Analytics as AnalyticsIcon,
+  Feed as FeedIcon,
 } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 import { ThemeProvider } from '@mui/material/styles';
@@ -14,7 +16,7 @@ import CreatePost from './components/CreatePost';
 import PostCard from './components/PostCard';
 import StoryComponent from './components/StoryComponent';
 import Sidebar from './components/Sidebar';
-import AnalyticsDashboard from './components/AnalyticsDashboard';
+import SimpleAnalytics from './components/SimpleAnalytics';
 
 const App = () => {
   const { posts, isDarkMode, unreadNotifications } = useSocialMedia();
@@ -39,7 +41,7 @@ const App = () => {
             {/* Main Content */}
             <Grid item xs={12} lg={showAnalytics ? 12 : 6}>
               {showAnalytics ? (
-                <AnalyticsDashboard />
+                <SimpleAnalytics />
               ) : (
                 <Box>
                   <StoryComponent />
@@ -114,6 +116,7 @@ const App = () => {
                           fullWidth 
                           variant="contained"
                           onClick={() => setShowAnalytics(true)}
+                          startIcon={<AnalyticsIcon />}
                         >
                           View Analytics
                         </Button>
@@ -130,10 +133,10 @@ const App = () => {
                       boxShadow: 1,
                     }}>
                       <Typography variant="h6" fontWeight={600} gutterBottom>
-                        Trending Now
+                        Trending in Bangladesh
                       </Typography>
                       <Box sx={{ '& > *': { mb: 1.5 } }}>
-                        {['#webdesign', '#reactjs', '#photography', '#travel', '#technology'].map((tag, index) => (
+                        {['#reactjs', '#bangladesh', '#photography', '#webdev', '#tech'].map((tag, index) => (
                           <Box key={index} sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                             <Typography variant="body2">
                               {tag}
@@ -162,7 +165,7 @@ const App = () => {
                 background: 'linear-gradient(135deg, #3B82F6 0%, #2563EB 100%)',
               }}
             >
-              {showAnalytics ? 'Feed' : 'Analytics'}
+              {showAnalytics ? <FeedIcon /> : <AnalyticsIcon />}
             </Fab>
           </motion.div>
           

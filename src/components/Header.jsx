@@ -121,7 +121,7 @@ const Header = () => {
                   WebkitTextFillColor: 'transparent',
                 }}
               >
-                Social<span style={{ color: isDarkMode ? '#10B981' : '#059669' }}>Hub</span>
+                BD<span style={{ color: isDarkMode ? '#10B981' : '#059669' }}>Social</span>
               </Typography>
             </Box>
 
@@ -169,7 +169,7 @@ const Header = () => {
               }}
             />
             <InputBase
-              placeholder="Search SocialHub..."
+              placeholder="Search for friends, posts, groups..."
               sx={{
                 width: '100%',
                 backgroundColor: isDarkMode ? '#374151' : '#F3F4F6',
@@ -305,9 +305,9 @@ const Header = () => {
                   @{user?.username}
                 </Typography>
                 <Chip
-                  label="Premium"
+                  label="React Developer"
                   size="small"
-                  color="warning"
+                  color="primary"
                   sx={{ mt: 1 }}
                 />
               </Box>
@@ -344,7 +344,7 @@ const Header = () => {
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 3 }}>
             <TrendingIcon sx={{ fontSize: 32, color: 'primary.main' }} />
             <Typography variant="h6" fontWeight={800}>
-              SocialHub
+              BDSocial
             </Typography>
           </Box>
           <List>

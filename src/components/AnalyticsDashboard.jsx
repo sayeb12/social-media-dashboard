@@ -39,8 +39,8 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
-  Area,
   AreaChart,
+  Area,
 } from 'recharts';
 import { motion } from 'framer-motion';
 

@@ -44,8 +44,8 @@ const Sidebar = () => {
   const joinedGroups = groups.slice(0, 4);
 
   const shortcuts = [
-    { icon: <GroupIcon />, label: 'Groups', count: 12 },
-    { icon: <EventIcon />, label: 'Events', count: 5 },
+    { icon: <GroupIcon />, label: 'Groups', count: groups.length },
+    { icon: <EventIcon />, label: 'Events', count: events.length },
     { icon: <ShoppingIcon />, label: 'Marketplace', count: null },
     { icon: <BookmarkIcon />, label: 'Saved', count: 24 },
     { icon: <HelpIcon />, label: 'Help & Support', count: null },
@@ -94,9 +94,9 @@ const Sidebar = () => {
                 variant="outlined"
               />
               <Chip
-                label="Premium"
+                label="Developer"
                 size="small"
-                color="warning"
+                color="primary"
               />
             </Box>
             <Button
@@ -123,7 +123,7 @@ const Sidebar = () => {
           <CardContent>
             <TextField
               fullWidth
-              placeholder="Search SocialHub"
+              placeholder="Search BDSocial"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               InputProps={{
@@ -149,7 +149,7 @@ const Sidebar = () => {
           <CardContent>
             <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
               <Typography variant="subtitle1" fontWeight={600}>
-                Online Friends
+                Online Friends ({onlineFriends.length})
               </Typography>
               <IconButton size="small">
                 <MoreIcon />
@@ -302,12 +302,20 @@ const Sidebar = () => {
                       </Typography>
                     }
                   />
-                  <Chip
-                    label="Going"
-                    size="small"
-                    color="success"
-                    icon={<CheckIcon />}
-                  />
+                  {event.isGoing ? (
+                    <Chip
+                      label="Going"
+                      size="small"
+                      color="success"
+                      icon={<CheckIcon />}
+                    />
+                  ) : (
+                    <Chip
+                      label="Interested"
+                      size="small"
+                      variant="outlined"
+                    />
+                  )}
                 </ListItem>
               ))}
             </List>

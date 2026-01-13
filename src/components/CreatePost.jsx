@@ -13,6 +13,8 @@ import {
   Menu,
   MenuItem,
   Chip,
+  Tooltip,
+  Typography
 } from '@mui/material';
 import {
   Image as ImageIcon,
@@ -108,7 +110,7 @@ const CreatePost = () => {
 
   const handleTagUser = () => {
     // In a real app, this would open a user search modal
-    const user = { id: '1', name: 'John Doe', username: 'johndoe' };
+    const user = { id: '1', name: 'Md Sayeb', username: 'Sayeb' };
     if (!taggedUsers.find(u => u.id === user.id)) {
       setTaggedUsers([...taggedUsers, user]);
     }
