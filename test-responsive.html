@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Test</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .device-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .device {
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .device-header {
+            background: #3B82F6;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Social Media Dashboard - Responsive Test</h1>
+    <p>Open this file in browser to test different screen sizes.</p>
+    
+    <div class="device-grid">
+        <div class="device">
+            <div class="device-header">Mobile (375px)</div>
+            <iframe src="http://localhost:5173" style="width: 375px;"></iframe>
+        </div>
+        <div class="device">
+            <div class="device-header">Tablet (768px)</div>
+            <iframe src="http://localhost:5173" style="width: 768px;"></iframe>
+        </div>
+        <div class="device">
+            <div class="device-header">Desktop (1024px)</div>
+            <iframe src="http://localhost:5173" style="width: 1024px;"></iframe>
+        </div>
+        <div class="device">
+            <div class="device-header">Large Desktop (1440px)</div>
+            <iframe src="http://localhost:5173" style="width: 1440px;"></iframe>
+        </div>
+    </div>
+    
+    <script>
+        // Auto-refresh iframes every 5 seconds to see changes
+        setInterval(() => {
+            document.querySelectorAll('iframe').forEach(iframe => {
+                iframe.src = iframe.src;
+            });
+        }, 5000);
+    </script>
+</body>
+</html>
