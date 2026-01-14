@@ -75,7 +75,7 @@ const Header = () => {
     setAnchorEl(null);
   };
 
-  return (
+    return (
     <>
       <AppBar 
         position="sticky" 
@@ -86,13 +86,17 @@ const Header = () => {
           borderColor: 'divider',
         }}
       >
-        <Toolbar sx={{ justifyContent: 'space-between', px: { xs: 1, sm: 3 } }}>
+        <Toolbar sx={{ 
+          justifyContent: 'space-between', 
+          px: { xs: 1, sm: 2, md: 3 },
+          minHeight: { xs: 56, sm: 64 },
+        }}>
           {/* Left: Logo & Mobile Menu */}
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: { xs: 1, sm: 2 } }}>
             <IconButton
               color="inherit"
-              onClick={() => setMobileMenuOpen(true)}
-              sx={{ display: { sm: 'none' } }}
+              onClick={onMenuClick}
+              sx={{ display: { md: 'none' } }}
             >
               <MenuIcon />
             </IconButton>
@@ -103,7 +107,7 @@ const Header = () => {
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
               >
                 <TrendingIcon sx={{ 
-                  fontSize: 32, 
+                  fontSize: { xs: 24, sm: 28, md: 32 }, 
                   color: 'primary.main',
                   background: 'linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%)',
                   WebkitBackgroundClip: 'text',
@@ -111,7 +115,7 @@ const Header = () => {
                 }} />
               </motion.div>
               <Typography
-                variant="h5"
+                variant="h6"
                 sx={{
                   fontWeight: 800,
                   letterSpacing: '-0.5px',
@@ -119,9 +123,10 @@ const Header = () => {
                   background: 'linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
+                  fontSize: { sm: '1.1rem', md: '1.25rem' },
                 }}
               >
-                BD<span style={{ color: isDarkMode ? '#10B981' : '#059669' }}>Social</span>
+                Social<span style={{ color: isDarkMode ? '#10B981' : '#059669' }}>Hub</span>
               </Typography>
             </Box>
 
@@ -141,6 +146,7 @@ const Header = () => {
                     '&:hover': {
                       backgroundColor: 'action.hover',
                     },
+                    fontSize: '0.875rem',
                   }}
                 >
                   {item.label}
@@ -169,13 +175,14 @@ const Header = () => {
               }}
             />
             <InputBase
-              placeholder="Search for friends, posts, groups..."
+              placeholder="Search SocialHub..."
               sx={{
                 width: '100%',
                 backgroundColor: isDarkMode ? '#374151' : '#F3F4F6',
                 borderRadius: 20,
                 px: 4,
                 py: 0.75,
+                fontSize: '0.875rem',
                 '&:hover': {
                   backgroundColor: isDarkMode ? '#4B5563' : '#E5E7EB',
                 },
@@ -190,13 +197,17 @@ const Header = () => {
           </Box>
 
           {/* Right: Action Icons */}
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: { xs: 0.5, sm: 1 } }}>
             {/* Search Mobile */}
-            <IconButton color="inherit" sx={{ display: { md: 'none' } }}>
+            <IconButton 
+              color="inherit" 
+              sx={{ display: { md: 'none' } }}
+              size="small"
+            >
               <SearchIcon />
             </IconButton>
 
-            {/* Create Post */}
+            {/* Create Post - Desktop */}
             <Button
               variant="contained"
               startIcon={<AddIcon />}
@@ -204,18 +215,27 @@ const Header = () => {
                 borderRadius: 20,
                 px: 2,
                 display: { xs: 'none', sm: 'flex' },
+                fontSize: '0.875rem',
+                py: 0.75,
               }}
             >
               Create
             </Button>
 
             {/* Theme Toggle */}
-            <IconButton onClick={toggleTheme} color="inherit">
+            <IconButton 
+              onClick={toggleTheme} 
+              color="inherit"
+              size="small"
+            >
               {isDarkMode ? <LightModeIcon /> : <DarkModeIcon />}
             </IconButton>
 
             {/* Messenger */}
-            <IconButton color="inherit">
+            <IconButton 
+              color="inherit"
+              size="small"
+            >
               <Badge badgeContent={3} color="error">
                 <ChatIcon />
               </Badge>
@@ -225,54 +245,24 @@ const Header = () => {
             <IconButton
               color="inherit"
               onClick={(e) => setNotificationsAnchor(e.currentTarget)}
+              size="small"
             >
               <Badge badgeContent={unreadNotifications} color="error">
                 <NotificationsIcon />
               </Badge>
             </IconButton>
 
-            <Menu
-              anchorEl={notificationsAnchor}
-              open={Boolean(notificationsAnchor)}
-              onClose={() => setNotificationsAnchor(null)}
-              PaperProps={{
-                sx: {
-                  width: 350,
-                  maxHeight: 400,
-                  mt: 1.5,
-                  borderRadius: 3,
-                },
-              }}
-            >
-              <Box sx={{ p: 2, borderBottom: 1, borderColor: 'divider' }}>
-                <Typography variant="h6">Notifications</Typography>
-              </Box>
-              {notifications.slice(0, 5).map((notification) => (
-                <MenuItem key={notification.id} sx={{ py: 1.5 }}>
-                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-                    <Avatar src={notification.avatar} sx={{ width: 40, height: 40 }} />
-                    <Box>
-                      <Typography variant="body2">{notification.message}</Typography>
-                      <Typography variant="caption" color="text.secondary">
-                        {notification.time}
-                      </Typography>
-                    </Box>
-                  </Box>
-                </MenuItem>
-              ))}
-              <Divider />
-              <MenuItem sx={{ justifyContent: 'center', color: 'primary.main' }}>
-                See all notifications
-              </MenuItem>
-            </Menu>
-
             {/* User Menu */}
-            <IconButton onClick={handleMenuOpen} sx={{ ml: 1 }}>
+            <IconButton 
+              onClick={handleMenuOpen} 
+              sx={{ ml: { xs: 0, sm: 1 } }}
+              size="small"
+            >
               <Avatar
                 src={user?.avatar}
                 sx={{
-                  width: 36,
-                  height: 36,
+                  width: { xs: 32, sm: 36 },
+                  height: { xs: 32, sm: 36 },
                   border: '2px solid',
                   borderColor: 'primary.main',
                 }}
@@ -280,50 +270,6 @@ const Header = () => {
                 {user?.name?.charAt(0)}
               </Avatar>
             </IconButton>
-
-            <Menu
-              anchorEl={anchorEl}
-              open={Boolean(anchorEl)}
-              onClose={handleMenuClose}
-              PaperProps={{
-                sx: {
-                  width: 250,
-                  borderRadius: 3,
-                  mt: 1.5,
-                },
-              }}
-            >
-              <Box sx={{ p: 2, textAlign: 'center' }}>
-                <Avatar
-                  src={user?.avatar}
-                  sx={{ width: 64, height: 64, mx: 'auto', mb: 1 }}
-                />
-                <Typography variant="subtitle1" fontWeight={600}>
-                  {user?.name}
-                </Typography>
-                <Typography variant="caption" color="text.secondary">
-                  @{user?.username}
-                </Typography>
-                <Chip
-                  label="React Developer"
-                  size="small"
-                  color="primary"
-                  sx={{ mt: 1 }}
-                />
-              </Box>
-              <Divider />
-              {userMenuItems.map((item) => (
-                <MenuItem
-                  key={item.label}
-                  component={Link}
-                  to={item.path}
-                  onClick={handleMenuClose}
-                >
-                  <ListItemIcon>{item.icon}</ListItemIcon>
-                  <ListItemText primary={item.label} />
-                </MenuItem>
-              ))}
-            </Menu>
           </Box>
         </Toolbar>
       </AppBar>
