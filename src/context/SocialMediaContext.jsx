@@ -67,195 +67,6 @@ const mockUsers = [
 const mockPosts = [
   {
     id: '1',
-    author: mockUsers[0], // Md Sayeb
-    content: 'Just finished building my new React project! Learned so much about hooks and context API. #react #webdev #coding',
-    timestamp: new Date(Date.now() - 3600000).toISOString(),
-    likes: 245,
-    loves: 89,
-    hahas: 12,
-    wows: 45,
-    sads: 3,
-    fires: 67,
-    comments: [
-      {
-        id: 'c1',
-        author: mockUsers[1], // Rafael Rafin
-        content: 'Great work Sayeb! The UI looks amazing 👏',
-        timestamp: new Date(Date.now() - 1800000).toISOString(),
-        likes: 12,
-      },
-      {
-        id: 'c2',
-        author: mockUsers[3], // Ubaida Ahmed
-        content: 'Clean code and great design! Let me know if you need help with deployment.',
-        timestamp: new Date(Date.now() - 1200000).toISOString(),
-        likes: 8,
-      },
-    ],
-    shares: 34,
-    isLiked: true,
-    isBookmarked: false,
-    privacy: 'public',
-    tags: ['react', 'webdev', 'coding', 'javascript'],
-    media: {
-      type: 'image',
-      url: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=400&fit=crop',
-      caption: 'My React Dashboard Project',
-    },
-  },
-  {
-    id: '2',
-    author: mockUsers[1], // Rafael Rafin
-    content: 'Captured this beautiful sunset at Cox\'s Bazar yesterday. Nature is the best therapy! #photography #bangladesh #sunset',
-    timestamp: new Date(Date.now() - 7200000).toISOString(),
-    likes: 189,
-    loves: 120,
-    hahas: 5,
-    wows: 78,
-    sads: 2,
-    fires: 45,
-    comments: [
-      {
-        id: 'c3',
-        author: mockUsers[0], // Md Sayeb
-        content: 'Amazing shot Rafin! The colors are perfect 😍',
-        timestamp: new Date(Date.now() - 6000000).toISOString(),
-        likes: 3,
-      },
-      {
-        id: 'c4',
-        author: mockUsers[2], // Samiya Rahman
-        content: 'This is breathtaking! Where exactly in Cox\'s Bazar?',
-        timestamp: new Date(Date.now() - 5500000).toISOString(),
-        likes: 5,
-      },
-    ],
-    shares: 23,
-    isLiked: false,
-    isBookmarked: true,
-    privacy: 'friends',
-    tags: ['photography', 'bangladesh', 'sunset', 'nature'],
-    media: {
-      type: 'image',
-      url: 'https://images.unsplash.com/photo-1501555088652-021faa106b9b?w=800&h=400&fit=crop',
-      caption: 'Sunset at Cox\'s Bazar',
-    },
-  },
-  {
-    id: '3',
-    author: mockUsers[2], // Samiya Rahman
-    content: 'Just completed my new UI design for a fintech app. Feedback welcome! #design #uiux #figma',
-    timestamp: new Date(Date.now() - 14400000).toISOString(),
-    likes: 156,
-    loves: 45,
-    hahas: 3,
-    wows: 32,
-    sads: 1,
-    fires: 28,
-    comments: [
-      {
-        id: 'c5',
-        author: mockUsers[0], // Md Sayeb
-        content: 'The color scheme is perfect! Can you share your design system?',
-        timestamp: new Date(Date.now() - 13000000).toISOString(),
-        likes: 7,
-      },
-    ],
-    shares: 18,
-    isLiked: true,
-    isBookmarked: false,
-    privacy: 'public',
-    tags: ['design', 'uiux', 'figma', 'fintech'],
-    media: {
-      type: 'image',
-      url: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&h=400&fit=crop',
-      caption: 'Fintech App UI Design',
-    },
-  },
-  {
-    id: '4',
-    author: mockUsers[3], // Ubaida Ahmed
-    content: 'Gave a workshop on React Performance Optimization today at the developer meetup. Great engagement from everyone! #react #workshop #performance',
-    timestamp: new Date(Date.now() - 21600000).toISOString(),
-    likes: 278,
-    loves: 95,
-    hahas: 8,
-    wows: 67,
-    sads: 2,
-    fires: 89,
-    comments: [
-      {
-        id: 'c6',
-        author: mockUsers[0], // Md Sayeb
-        content: 'Wish I could attend! Any slides or resources to share?',
-        timestamp: new Date(Date.now() - 20000000).toISOString(),
-        likes: 15,
-      },
-      {
-        id: 'c7',
-        author: mockUsers[1], // Rafael Rafin
-        content: 'The workshop was amazing Ubaida! Learned a lot about memoization.',
-        timestamp: new Date(Date.now() - 19000000).toISOString(),
-        likes: 9,
-      },
-    ],
-    shares: 42,
-    isLiked: true,
-    isBookmarked: true,
-    privacy: 'public',
-    tags: ['react', 'workshop', 'performance', 'javascript'],
-    media: {
-      type: 'image',
-      url: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop',
-      caption: 'React Workshop Session',
-    },
-  },
-];
-
-// Update the mockStories array with more realistic data
-const mockStories = [
-  {
-    id: '1',
-    userId: '1',
-    user: mockUsers[0],
-    media: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=400&h=700&fit=crop',
-    mediaType: 'image',
-    timestamp: new Date(Date.now() - 60000).toISOString(),
-    seen: false,
-  },
-  {
-    id: '2',
-    userId: '2',
-    user: mockUsers[1],
-    media: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&h=700&fit=crop',
-    mediaType: 'image',
-    timestamp: new Date(Date.now() - 120000).toISOString(),
-    seen: false,
-  },
-  {
-    id: '3',
-    userId: '3',
-    user: mockUsers[2],
-    media: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=700&fit=crop',
-    mediaType: 'image',
-    timestamp: new Date(Date.now() - 180000).toISOString(),
-    seen: true,
-  },
-  {
-    id: '4',
-    userId: '1',
-    user: mockUsers[0],
-    media: 'https://images.unsplash.com/photo-1516937941344-00b4e0337589?w=400&h=700&fit=crop',
-    mediaType: 'image',
-    timestamp: new Date(Date.now() - 240000).toISOString(),
-    seen: false,
-  },
-];
-
-// Update mockPosts with multiple media items
-const mockPosts = [
-  {
-    id: '1',
     author: mockUsers[0],
     content: 'Just launched my new website! Check it out and let me know what you think. #webdesign #portfolio',
     timestamp: new Date(Date.now() - 3600000).toISOString(),
@@ -369,6 +180,44 @@ const mockPosts = [
   },
 ];
 
+const mockStories = [
+  {
+    id: '1',
+    userId: '1',
+    user: mockUsers[0],
+    media: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=400&h=700&fit=crop',
+    mediaType: 'image',
+    timestamp: new Date(Date.now() - 60000).toISOString(),
+    seen: false,
+  },
+  {
+    id: '2',
+    userId: '2',
+    user: mockUsers[1],
+    media: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&h=700&fit=crop',
+    mediaType: 'image',
+    timestamp: new Date(Date.now() - 120000).toISOString(),
+    seen: false,
+  },
+  {
+    id: '3',
+    userId: '3',
+    user: mockUsers[2],
+    media: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=700&fit=crop',
+    mediaType: 'image',
+    timestamp: new Date(Date.now() - 180000).toISOString(),
+    seen: true,
+  },
+  {
+    id: '4',
+    userId: '1',
+    user: mockUsers[0],
+    media: 'https://images.unsplash.com/photo-1516937941344-00b4e0337589?w=400&h=700&fit=crop',
+    mediaType: 'image',
+    timestamp: new Date(Date.now() - 240000).toISOString(),
+    seen: false,
+  },
+];
 const mockNotifications = [
   {
     id: '1',
